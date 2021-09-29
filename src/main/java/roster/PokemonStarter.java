@@ -9,7 +9,7 @@ import models.Stat;
 
 @Getter
 @Setter
-public class PokemonFighter {
+public class PokemonStarter {
 	private String name;
 	private Set<String> moveSet;
     private List<Stat> stats;
