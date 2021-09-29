@@ -22,10 +22,12 @@ import roster.PokemonStarter;
 
 public class APIDriver {
 
+	private static final int NUM_ROSTER_SPOTS = 2;
+	
     public static void main(String[] args) {
         List <PokemonStarter> roster = new ArrayList <PokemonStarter> ();
         try (Scanner sc = new Scanner(System.in)) {
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < NUM_ROSTER_SPOTS; i++) {
                 System.out.println("Enter a pokemon name.");
                 final String pokemonName = sc.nextLine().toLowerCase();
                 try {
@@ -54,7 +56,7 @@ public class APIDriver {
 
     // Given a list of potential moves, choose up to 4 at random.
     private static Set <String> generateRandomMoveSet(List <Move> moves) {
-        Set < String > moveSet = new HashSet<String>();
+        Set <String> moveSet = new HashSet<String>();
         Collections.shuffle(moves);
         for (int i = 0; (i < moves.size() && i < 4); i++) {
             String moveName = moves.get(i).getMove().getName();
